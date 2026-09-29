@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CampusOS AI</title><link rel="stylesheet" href="style.css">
+</head><body>
+<header>
+  <h1>CampusOS<span>AI</span></h1>
+  <p class="tag">Your material. Your language. Offline.</p>
+  <div id="health" class="health" role="status" aria-live="polite">checking…</div>
+</header>
+
+<main>
+  <section class="zone" aria-labelledby="lib-h">
+    <h2 id="lib-h">Library</h2>
+    <label class="drop" for="file">
+      <input type="file" id="file" accept="application/pdf" multiple>
+      <span>Choose PDFs</span><small>Digital text PDFs. Max 50 MB each.</small>
+    </label>
+    <div id="ingest" class="note" role="status" aria-live="polite"></div>
+    <ul id="docs" class="docs"></ul>
+  </section>
+
+  <section class="zone wide" aria-labelledby="ask-h">
+    <h2 id="ask-h">Ask</h2>
+    <div class="controls">
+      <label>Language
+        <select id="lang"><option value="en">English</option><option value="hinglish">Hinglish</option><option value="hi">हिंदी</option></select>
+      </label>
+      <label>Depth
+        <select id="depth"><option value="normal">Normal</option><option value="simple">Explain simpler</option><option value="exam">Exam-ready</option></select>
+      </label>
+      <label>Source
+        <select id="scope"><option value="">All documents</option></select>
+      </label>
+    </div>
+    <div class="askrow">
+      <input id="q" type="text" placeholder="Ask a question about your material…" autocomplete="off">
+      <button id="mic" type="button" aria-label="Hold to record your question">🎙 Hold to talk</button>
+      <button id="send" type="button" class="primary">Ask</button>
+    </div>
+    <div id="transcript" class="note"></div>
+    <div id="answer" class="answer" role="region" aria-live="polite"></div>
+  </section>
+
+  <section class="zone wide" aria-labelledby="quiz-h">
+    <h2 id="quiz-h">Quiz</h2>
+    <div class="askrow">
+      <button id="genquiz" type="button" class="primary">Quiz me</button>
+      <label>Questions <input id="nq" type="number" value="5" min="1" max="10"></label>
+    </div>
+    <div id="quiz"></div>
+  </section>
+</main>
+
+<div id="page" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="page-h">
+  <div class="modal-in"><button id="pclose" class="close" aria-label="Close">✕</button>
+    <h3 id="page-h"></h3><pre id="ptext"></pre></div>
+</div>
+<script src="app.js"></script>
+</body></html>

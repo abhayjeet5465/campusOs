@@ -1,0 +1,13 @@
+# Downloaded weights — large, reproducible via scripts/fetch_models.py
+models/
+# The student's private material and derived vectors. Never commit.
+data/
+eval/pdfs/
+__pycache__/
+*.pyc
+.venv/
+
+# Personal planning scratch — not part of the product, not for the public repo.
+initial.md
+a.json
+u.html
