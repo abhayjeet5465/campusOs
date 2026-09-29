@@ -11,3 +11,6 @@ __pycache__/
 initial.md
 a.json
 u.html
+
+# Rendered QA images for submission documents
+qa/
